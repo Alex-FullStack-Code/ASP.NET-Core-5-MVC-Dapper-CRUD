@@ -1,0 +1,84 @@
+﻿@model IEnumerable<ASPCoreMVCDapper.Models.Customer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div id="divIndexHeader">
+    <h3>XYZ Customer Information Master List</h3>
+</div>
+
+<div id="divIndexCreate" class="row">
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="fas fa-plus"><span> Add Customer</span></i>
+    </a>
+</div>
+<div class="row">
+    <table id="tblRecords" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CompanyName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.State)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IntroDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreditLimit)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.State)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IntroDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreditLimit)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" title="Edit Customer" asp-route-id="@item.CustomerID">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a asp-action="Delete" title="Delete Customer" asp-route-id="@item.CustomerID">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@section scripts{
+    <link href="~/css/Customer.css" rel="stylesheet" />
+}

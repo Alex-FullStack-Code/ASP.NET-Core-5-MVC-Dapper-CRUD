@@ -1,0 +1,14 @@
+﻿#divIndexCreate {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#divIndexHeader {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align:center;
+}
+
+#tblRecords{
+    border-radius: 5px;
+}

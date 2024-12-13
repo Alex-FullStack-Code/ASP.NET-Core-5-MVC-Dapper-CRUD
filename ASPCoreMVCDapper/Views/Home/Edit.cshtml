@@ -1,0 +1,71 @@
+﻿@model ASPCoreMVCDapper.Models.Customer
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div>
+    <h3>Edit Customer</h3>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CustomerID" />
+            <div class="form-group row">
+                <label asp-for="CompanyName" class="control-label col-4"></label>
+                <div class="col-8">
+                    <input asp-for="CompanyName" class="form-control" />
+                    <span asp-validation-for="CompanyName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Address" class="control-label col-4"></label>
+                <div class="col-8">
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="City" class="control-label col-4"></label>
+                <div class="col-8">
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="State" class="control-label col-4"></label>
+                <div class="col-8">
+                    <input asp-for="State" class="form-control" />
+                    <span asp-validation-for="State" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="IntroDate" class="control-label col-4"></label>
+                <div class="col-8">
+                    <input asp-for="IntroDate" type="date" class="form-control" />
+                    <span asp-validation-for="IntroDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="CreditLimit" class="control-label col-4"></label>
+                <div class="col-8">
+                    <input asp-for="CreditLimit" class="form-control" />
+                    <span asp-validation-for="CreditLimit" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4"></div>
+                <div class="col-8">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-info">Back to List</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
